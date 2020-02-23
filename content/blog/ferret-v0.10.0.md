@@ -9,19 +9,19 @@ date: "2020-02-21"
 
 Hello fellow miners, **[Ferret v0.10.0](https://github.com/MontFerret/ferret/releases/tag/v0.10.0)** has been **finally** released!
 
-It's been long and busy 6 months since the last release and many of you might thought that the project got abandoned.    
+It's been long and busy 6 months since the last release, and many of you might thought that the project got abandoned.    
 We assure you it's not! But sometimes life happens and slows you down.
 
 But we are back and ready to rock!
 
-This release has many great features and improvements thank to all our contributors.    
-Let's take a look at the most important ones. The full changelog you can find [here](https://github.com/MontFerret/ferret/blob/master/CHANGELOG.md#0100).
+This release has many great features and improvements, thank to all our contributors.    
+Let's take a look at the most important ones. You can find the full changelog [here](https://github.com/MontFerret/ferret/blob/master/CHANGELOG.md#0100).
 
 # What's added
 ## I/O functions
-You asked - we added! Finally, I/O functions have arrived.
-In the beginning of the project, we were concerned about security threats that access to filesystem represents, but seeing how demanded this functionality is we agreed to add it.    
-Now, ferret has new I/O namespaces, with the following functions:
+You asked - we delivered! I/O functions are finally here.
+In the beginning of the project, we were concerned about potential security threats access to filesystem could create, but seeing how in-demand this functionality is, we agreed to add it.    
+Now ferret has new I/O namespaces with the following functions:
 
 - ``IO::FS::READ``
 - ``IO::FS::WRITE``
@@ -34,7 +34,7 @@ Now, ferret has new I/O namespaces, with the following functions:
 Enjoy!
 
 ## Loading HTML into memory
-Another popular feature request - possibility to load a prefetched HTML document into Ferret.    
+Another popular feature request - the possibility to load a prefetched HTML document into Ferret.    
 With this release, you can finally do it with ``HTML_PARSE`` function.
 
 {{< code fql >}}
@@ -48,12 +48,12 @@ RETURN INNER_TEXT(doc, 'title')
 {{</ code >}}
 
 ## Parameter value availability check
-In this release, we do pre-runtime check whether all values are provided for parameters used by a script.    
+In this release, we do check pre-runtime to make sure all parameters are provided values in a script.    
 It was very frustrating when your script was failing in the middle of the execution just because you forgot to provide a value for one of the paramaters.
 
 # What's changed
 ## Case insensitivity
-Finally, FQL keywords are case insensitive!
+Finally! FQL keywords are case insensitive!
 
 That's how Google Search query looks like in lower case:
 
@@ -81,9 +81,9 @@ CDP driver performance has been drastically improved that brings CPU usage down 
 
 # What's fixed
 ## Redirects
-It was a long lasting problem that Ferret could not correctly handle redirects that can occur during page navigation that was leading to timeouts or corrupt page state.    
+For a long time, redirects that occurred during page navigation led to timeouts or corrupt page state.    
 Now it has finally been fixed!   
-```WAIT_NAVIGATION``` function has 2nd optional parameter that can be an object with the following fields:
+```WAIT_NAVIGATION``` function has 2nd optional parameter, an object with the following fields:
 
 {{< code go >}}
 type Parameters struct {
@@ -92,7 +92,7 @@ type Parameters struct {
 }
 {{</ code >}}
 
-``TargetURL`` is a regexp string that can be used to give Ferret a hint what the destination url is:
+``TargetURL`` is a regexp string that can be used to give Ferret a hint about what the destination url is:
 
 {{< code fql >}}
 LET doc = DOCUMENT("http://waos.ovh/redirect.html", {
