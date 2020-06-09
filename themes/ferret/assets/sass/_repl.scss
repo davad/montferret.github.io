@@ -3,3 +3,13 @@
     // height: 100%;
     // position: relative;
 }
+
+.code-editor {
+    position: relative;
+}
+.code-editor .button {
+    position: absolute;
+    z-index: 1;
+    right: 2.5em;
+    top: 3.5em;
+}
